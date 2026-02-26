@@ -1,0 +1,65 @@
+{
+  "name": "thinktrack-modular-monolith",
+  "version": "1.0.0",
+  "description": "ThinkTrack: A Modular Monolith for Cognitive Self-Regulation and Focus",
+  "main": "dist/server.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "dev": "nodemon src/server.ts",
+    "build": "tsc && cd frontend && npm install --production=false && npm run build",
+    "start": "node dist/server.js",
+    "test:e2e": "cross-env NODE_ENV=test cucumber-js",
+    "test:all": "npm run test:unit && npm run test:e2e && npm run test:ui",
+    "test:ui": "playwright test",
+    "test:unit": "vitest run",
+    "heroku-postbuild": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lyfe019/thinktrack-monolith.git"
+  },
+  "keywords": [
+    "ddd",
+    "modular-monolith",
+    "typescript",
+    "cognitive-science",
+    "self-regulation"
+  ],
+  "author": "ThinkTrack Team",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/lyfe019/ThinkTrackissues"
+  },
+  "homepage": "https://github.com/lyfe019/ThinkTrack#readme",
+  "devDependencies": {
+    "@cucumber/cucumber": "^12.6.0",
+    "@playwright/test": "^1.58.1",
+    "@types/bcrypt": "^6.0.0",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "^25.2.0",
+    "@types/supertest": "^6.0.3",
+    "cross-env": "^10.1.0",
+    "expect": "^30.2.0",
+    "nodemon": "^3.1.11",
+    "supertest": "^7.2.2",
+    "vitest": "^3.0.0"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "consola": "^3.4.2",
+    "cors": "^2.8.6",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3",
+    "uuid": "^13.0.0",
+    "winston": "^3.19.0"
+  }
+}
